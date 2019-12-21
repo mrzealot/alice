@@ -34,6 +34,15 @@
     ```
 
 - Setup WM-related stuff:
+    - dedicated i3 repo for fresher versions
+
+        ```bash
+        curl https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2019.02.01_all.deb --output /tmp/keyring.deb
+        sudo dpkg -i /tmp/keyring.deb
+        echo "deb https://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" | sudo tee -a /etc/apt/sources.list.d/sur5r-i3.list
+        sudo apt update
+        ```
+
     - `sudo apt install i3 i3lock feh`
     - a separate package to control backlight:
 
