@@ -143,6 +143,9 @@ bindsym XF86AudioMute exec --no-startup-id $volume_command toggle
 bindsym XF86MonBrightnessUp exec sudo light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec sudo light -U 5 # decrease screen brightness
 
+# Time popup
+bindsym $g+t exec --no-startup-id ~/.config/i3/time.sh
+
 
 
 
