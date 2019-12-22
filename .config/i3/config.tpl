@@ -140,8 +140,15 @@ bindsym XF86AudioLowerVolume exec --no-startup-id $volume_command 5%-
 bindsym XF86AudioMute exec --no-startup-id $volume_command toggle
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec sudo light -A 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec sudo light -U 5 # decrease screen brightness
+set $brightness_command ~/.config/i3/brightness.sh
+bindsym XF86MonBrightnessUp exec $brightness_command -A 5 # increase
+bindsym XF86MonBrightnessDown exec $brightness_command -U 5 # decrease
+
+# Disabling built-in keyboard/touchpad
+bindsym $g+d exec ~/.config/i3/keyboard.sh
+
+# Muting the mic
+bindsym XF86AudioMicMute exec ~/.config/i3/mic.sh
 
 # Time popup
 bindsym $g+t exec --no-startup-id ~/.config/i3/time.sh
