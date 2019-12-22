@@ -15,23 +15,33 @@
 - Install basic dependencies:
     - `sudo apt install curl git`
 
-- Initialize dotfiles (from [this guide](https://www.atlassian.com/git/tutorials/dotfiles)):
+- Initialize dotfiles (inspired by [this guide](https://www.atlassian.com/git/tutorials/dotfiles)):
 
-    ```
-    cd
-    git clone --bare https://github.com/mrzealot/alice .alice
-    alias config='/usr/bin/git --git-dir=$HOME/.alice/ --work-tree=$HOME'
-    mkdir -p .config-backup
-    config checkout
-    if [ $? = 0 ]; then
-        echo "Checked out config.";
-    else
-        echo "Backing up pre-existing dot files.";
-        config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
-    fi;
-    config checkout
-    config config status.showUntrackedFiles no
-    ```
+    - clone repo
+    
+        ```bash
+        cd
+        git clone --bare https://github.com/mrzealot/alice .alice
+        alias alice='/usr/bin/git --git-dir=$HOME/.alice/ --work-tree=$HOME'
+        ```
+
+    - checkout contents to home dir
+
+        ```bash
+        mkdir -p .config-backup
+        alice checkout
+        if [[ $? != 0 ]]; then
+            echo "Checked out alice config.";
+        else
+            echo "Backing up pre-existing dot files.";
+            alice checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
+        fi;
+        alice checkout
+        ```
+
+    - ignore untraced files: `alice config status.showUntrackedFiles no`
+
+    - make all tracked scripts executable: `alice ls-tree -r master --name-only | grep .sh$ | xargs chmod +x`
 
 - Setup WM-related stuff:
     - dedicated i3 repo for fresher versions

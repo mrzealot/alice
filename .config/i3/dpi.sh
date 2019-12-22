@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Set X DPI appropriate to the current setup
+
 low=92
 high=157
 

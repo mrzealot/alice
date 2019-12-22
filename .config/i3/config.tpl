@@ -1,10 +1,10 @@
-# Basic 
+# Modifiers 
 set $c Control
 set $s Shift
 set $a Mod1
 set $g Mod4
 
-# Outputs
+# Outputs (filled in by .xinitrc)
 set $in INTERNAL_DISPLAY
 set $ex EXTERNAL_DISPLAY
 
@@ -14,62 +14,56 @@ font pango:monospace 8
 # Styling
 default_border none
 
+# Bottom bar
+# mode = hide for now as a training wheel, will set to "invisible" later
+bar {
+        mode hide
+        status_command i3status
+}
+
 # Use Mouse+$a to drag floating windows to their wanted position
 floating_modifier $a
 
-# start a terminal
-bindsym $g+space exec i3-sensible-terminal
-
-# kill focused window
-bindsym $g+w kill
-
-# start dmenu (a program launcher)
-bindsym $g+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $g+d exec --no-startup-id i3-dmenu-desktop
 
 
-# change focus
+
+# Change focus
 bindsym $g+Left focus left
 bindsym $g+Down focus down
 bindsym $g+Up focus up
 bindsym $g+Right focus right
 
-# move focused window
-bindsym $g+Shift+Left move left
-bindsym $g+Shift+Down move down
-bindsym $g+Shift+Up move up
-bindsym $g+Shift+Right move right
+# Move focused window
+bindsym $g+$s+Left move left
+bindsym $g+$s+Down move down
+bindsym $g+$s+Up move up
+bindsym $g+$s+Right move right
 
-# split in horizontal orientation
-bindsym $g+h split h
+# Resize focused window
+bindsym $g+$c+Left resize shrink width 10 px or 10 ppt
+bindsym $g+$c+Down resize grow height 10 px or 10 ppt
+bindsym $g+$c+Up resize shrink height 10 px or 10 ppt
+bindsym $g+$c+Right resize grow width 10 px or 10 ppt
 
-# split in vertical orientation
-bindsym $g+v split v
 
-# enter fullscreen mode for the focused container
+
+
+# Enter fullscreen mode
 bindsym $g+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $g+s layout stacking
-#bindsym $g+w layout tabbed
-#bindsym $g+e layout toggle split
+# Split in horizontal/vertical orientation
+# These are "around" the fullscreen toggle
+# for easier remembering, consider:
+# horizontal = W for "water level"
+bindsym $g+w split h
 
-# toggle tiling / floating
-bindsym $g+Shift+Tab floating toggle
-
-# change focus between tiling / floating windows
-bindsym $g+Tab focus mode_toggle
-
-# focus the parent container
-bindsym $g+a focus parent
-
-# focus the child container
-#bindsym $g+d focus child
+# and vertical = P for "portrait"
+bindsym $g+p split v
 
 
+
+
+# Attach workspaces to outputs
 workspace 1 output $ex 
 workspace 2 output $ex 
 workspace 3 output $ex 
@@ -80,7 +74,7 @@ workspace 7 output $ex
 workspace 8 output $ex 
 workspace 9 output $in
 
-# switch to workspace
+# Switch to workspace
 bindsym $g+n workspace 1
 bindsym $g+e workspace 2
 bindsym $g+i workspace 3
@@ -89,9 +83,9 @@ bindsym $g+l workspace 5
 bindsym $g+u workspace 6
 bindsym $g+y workspace 7
 bindsym $g+aacute workspace 8
-bindsym $g+m workspace 9
+bindsym $g+h workspace 9
 
-# move focused container to workspace
+# Move focused container to workspace
 bindsym $g+$s+n move container to workspace 1
 bindsym $g+$s+e move container to workspace 2
 bindsym $g+$s+i move container to workspace 3
@@ -100,72 +94,87 @@ bindsym $g+$s+l move container to workspace 5
 bindsym $g+$s+u move container to workspace 6
 bindsym $g+$s+y move container to workspace 7
 bindsym $g+$s+aacute move container to workspace 8
-bindsym $g+$s+m move container to workspace 9
+bindsym $g+$s+h move container to workspace 9
 
-# reload the configuration file
-bindsym $g+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $g+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $g+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym eacute resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+
+# Kill focused window
+bindsym $g+k kill
+# Restart i3 in place
+bindsym $g+j restart
+# Lock screen
+set $lock_command i3lock -u -t -i ~/.wallpapers/lock.png
+bindsym $g+eacute exec $lock_command
+
+
+
+
+# Power management
+set $power_command ~/.config/i3/power.sh
+mode "power" {
+        # R for reboot
+        bindsym r exec --no-startup-id $power_command -r, mode "default"
+
+        # X for restarting X
+        # (which automatically happens when exiting i3 because of the auto login conf)
+        bindsym x exec --no-startup-id $power_command -x, mode "default"
+
+        # S for shutdown
+        bindsym s exec --no-startup-id $power_command -s, mode "default"
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+bindsym $g+q mode "power"
 
-bindsym $g+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status
-}
 
-# Pulse Audio controls
+
+# Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
 
-# Sreen brightness controls
+# Screen brightness controls
 bindsym XF86MonBrightnessUp exec sudo light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec sudo light -U 5 # decrease screen brightness
 
 
-# Auto open basic programs
 
-# Control Center
-assign [instance="alice_cc_udd"] 9
-exec ~/.config/i3/dpi.sh high
-exec brave-browser --user-data-dir=/home/zealot/.alice_cc_udd
-exec ~/.config/i3/dpi.sh auto
+
+# Program-specific settings
 
 # Browser
-assign [class="Brave-browser"] 1
-exec brave-browser
+# No specific confinement, but automatically started on workspace 1
+bindsym $g+b exec brave-browser
+exec --no-startup-id i3-msg 'workspace 1; exec brave-browser'
 
 # Editor
 assign [class="Code"] 2
-exec code
+# Can't start by default for some reason without messing up keybindings...
+# So I just bind it and open when needed
+bindsym $g+c exec code
 
 # Terminal
 exec --no-startup-id i3-msg 'workspace 3; exec gnome-terminal; workspace 1'
+bindsym $g+space exec i3-sensible-terminal
+
+# Control Center
+assign [instance="alice_cc_udd"] 9
+bindsym $g+z exec --no-startup-id .config/i3/cc.sh
+exec --no-startup-id .config/i3/cc.sh
+
+# File Manager
+bindsym $g+Return exec nautilus
+
+# Quick Status Popup
+# TODO
+
+
+
+
+# Done, lock for initial "login"
+exec $lock_command
