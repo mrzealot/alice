@@ -24,7 +24,7 @@ esac
 
 # gracefully close all apps
 i3-msg '[class=".*"] kill'
-sleep 5s
+sleep 2s
 
 # do it
 $ACTION &

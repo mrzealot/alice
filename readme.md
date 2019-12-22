@@ -53,7 +53,7 @@
         sudo apt update
         ```
 
-    - `sudo apt install i3 i3lock feh`
+    - `sudo apt install i3 i3lock feh compton`
     - a separate package to control backlight:
 
         ```bash

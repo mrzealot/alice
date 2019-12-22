@@ -145,6 +145,12 @@ bindsym XF86MonBrightnessDown exec sudo light -U 5 # decrease screen brightness
 
 
 
+# Background stuff
+exec --no-startup-id compton -b
+
+
+
+
 # Program-specific settings
 
 # Browser
