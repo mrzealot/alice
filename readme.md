@@ -13,7 +13,7 @@
     - modify corresponding line: `%sudo ALL=(ALL) NOPASSWD: ALL`
 
 - Install basic dependencies:
-    - `sudo apt install curl git`
+    - `sudo apt install curl git libxrandr2`
 
 - Initialize dotfiles (inspired by [this guide](https://www.atlassian.com/git/tutorials/dotfiles)):
 
@@ -72,3 +72,16 @@
         ```
 
     - set i3 as the default WM: `sudo update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/bin/i3 60`
+
+- Install `dunst` for custom notifications
+
+    ```bash
+    sudo apt install libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libnotify-dev
+    mkdir -p .builds/dunst
+    git clone https://github.com/dunst-project/dunst.git .builds/dunst
+    cd .builds/dunst
+    make
+    sudo make install
+    make dunstify
+    sudo install -Dm755 dunstify /usr/local/bin/dunstify
+    ```

@@ -134,9 +134,10 @@ bindsym $g+q mode "power"
 
 
 # Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
-bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
+set $volume_command ~/.config/i3/volume.sh
+bindsym XF86AudioRaiseVolume exec --no-startup-id $volume_command 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id $volume_command 5%-
+bindsym XF86AudioMute exec --no-startup-id $volume_command toggle
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec sudo light -A 5 # increase screen brightness
@@ -146,7 +147,12 @@ bindsym XF86MonBrightnessDown exec sudo light -U 5 # decrease screen brightness
 
 
 # Background stuff
+
+# Compositor for flicker-free transitions
 exec --no-startup-id compton -b
+
+# Notification daemon
+exec --no-startup-id dunst -config ~/.dunstrc
 
 
 
@@ -170,8 +176,8 @@ bindsym $g+space exec i3-sensible-terminal
 
 # Control Center
 assign [instance="alice_cc_udd"] 9
-bindsym $g+z exec --no-startup-id .config/i3/cc.sh
-exec --no-startup-id .config/i3/cc.sh
+bindsym $g+z exec --no-startup-id ~/.config/i3/cc.sh
+exec --no-startup-id ~/.config/i3/cc.sh
 
 # File Manager
 bindsym $g+Return exec nautilus
