@@ -86,15 +86,15 @@ bindsym $g+aacute workspace 8
 bindsym $g+h workspace 9
 
 # Move focused container to workspace
-bindsym $g+$s+n move container to workspace 1
-bindsym $g+$s+e move container to workspace 2
-bindsym $g+$s+i move container to workspace 3
-bindsym $g+$s+o move container to workspace 4
-bindsym $g+$s+l move container to workspace 5
-bindsym $g+$s+u move container to workspace 6
-bindsym $g+$s+y move container to workspace 7
-bindsym $g+$s+aacute move container to workspace 8
-bindsym $g+$s+h move container to workspace 9
+bindsym $g+$c+n move container to workspace 1
+bindsym $g+$c+e move container to workspace 2
+bindsym $g+$c+i move container to workspace 3
+bindsym $g+$c+o move container to workspace 4
+bindsym $g+$c+l move container to workspace 5
+bindsym $g+$c+u move container to workspace 6
+bindsym $g+$c+y move container to workspace 7
+bindsym $g+$c+aacute move container to workspace 8
+bindsym $g+$c+h move container to workspace 9
 
 
 
@@ -102,8 +102,7 @@ bindsym $g+$s+h move container to workspace 9
 
 # Kill focused window
 bindsym $g+k kill
-# Restart i3 in place
-bindsym $g+j restart
+
 # Lock screen
 set $lock_command i3lock -u -t -i ~/.wallpapers/lock.png
 bindsym $g+eacute exec $lock_command
@@ -151,7 +150,7 @@ bindsym $g+d exec ~/.config/i3/keyboard.sh
 bindsym XF86AudioMicMute exec ~/.config/i3/mic.sh
 
 # Time popup
-bindsym $g+t exec --no-startup-id ~/.config/i3/time.sh
+bindsym $g+m exec --no-startup-id ~/.config/i3/time.sh
 
 
 

@@ -13,7 +13,7 @@
     - modify corresponding line: `%sudo ALL=(ALL) NOPASSWD: ALL`
 
 - Install basic dependencies:
-    - `sudo apt install curl git libxrandr2`
+    - `sudo apt install curl git vim x11-xserver-utils`
 
 - Initialize dotfiles (inspired by [this guide](https://www.atlassian.com/git/tutorials/dotfiles)):
 
