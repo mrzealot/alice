@@ -1,0 +1,128 @@
+/* modified from the official arthur theme */
+/* https://github.com/davatorium/rofi-themes/blob/master/Official%20Themes/arthur.rasi */
+
+configuration {
+    modi: "drun";
+    font: "hack 30";
+    show-icons: true;
+    display-drun: ">";
+}
+
+* {
+    background-color: transparent;
+    black: #000000;
+    tblack: #222222ee;
+    darkgrey: #444444ee;
+    lightgrey: #bbbbbbee;
+    white: #ffffff;
+    red: #ff0000ee;
+    transparent: rgba(0,0,0,0);
+}
+
+#window {
+    location: center;
+    anchor: center;
+    transparency: "screenshot";
+    padding: 10px;
+    border: 0px;
+    border-radius: 5px;
+    color: @white;
+    background-color: @transparent;
+    spacing: 0;
+    children:  [vertb, mainbox];
+    orientation: horizontal;
+}
+
+#mainbox {
+    spacing: 0;
+    children: [ inputbar, message, listview ];
+}
+
+#message {
+    border-color: @black;
+    border: 0px 2px 2px 2px;
+    padding: 10px;
+    background-color: @lightgrey;
+    font-size: 10px;
+    color: @black;
+}
+
+#inputbar {
+    color: @white;
+    padding: 20px;
+    background-color: @tblack;
+    border: 2px 2px 2px 2px;
+    border-radius:  5px 5px 0px 0px;
+    border-color: @black;
+}
+
+#entry,prompt,case-indicator {
+    text-font: inherit;
+    text-color:inherit;
+}
+
+#prompt {
+    margin:     0px 0.3em 0em 0em ;
+}
+
+#listview {
+    padding: 20px;
+    border-radius: 0px 0px 5px 5px;
+    border-color: @black;
+    border: 0px 2px 2px 2px;
+    background-color: @tblack;
+    dynamic: false;
+    lines: 6;
+}
+
+#element {
+    padding: 5px;
+    vertical-align: 0.5;
+    border-radius: 5px;
+    background-color: transparent;
+    color: @white;
+    font: "Hack 18";
+}
+
+#element selected.normal {
+    background-color: @darkgrey;
+}
+
+#element normal active {
+    foreground: @darkgrey;
+}
+
+#element normal urgent {
+    foreground: @red;
+}
+
+#element alternate normal {
+}
+
+#element alternate active {
+    foreground: @darkgrey;
+}
+
+#element alternate urgent {
+    foreground: @red;
+}
+
+#element selected active {
+    background-color: @darkgrey;
+    foreground: @black;
+}
+
+#element selected urgent {
+    background-color: @red;
+    foreground: @black;
+}
+
+#element normal normal {
+
+}
+
+#vertb {
+    expand: false;
+    children: [ dummy0, sidebar, dummy1  ];
+}
+

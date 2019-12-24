@@ -215,6 +215,9 @@ exec --no-startup-id ~/.config/i3/cc.sh
 # File Manager
 bindsym $g+Return exec nautilus
 
+# Launcher
+bindsym $g+Tab exec rofi -show drun
+
 
 
 

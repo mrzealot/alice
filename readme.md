@@ -54,8 +54,8 @@
         sudo apt update
         ```
 
-    - `sudo apt install i3 i3lock feh compton`
-    
+    - `sudo apt install i3 i3lock feh compton rofi`
+
     - a separate package to control backlight:
 
         ```bash
