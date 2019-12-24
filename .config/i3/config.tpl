@@ -132,7 +132,28 @@ bindsym $g+q mode "power"
 
 
 
-# Audio controls
+# Audio output selection
+set $audio_command ~/.config/i3/audio.sh
+mode "audio" {
+        # I for internal
+        bindsym i exec --no-startup-id $audio_command -i, mode "default"
+
+        # E for external (HDMI)
+        bindsym e exec --no-startup-id $audio_command -e, mode "default"
+
+        # S for soundbar (Bluetooth)
+        bindsym s exec --no-startup-id $audio_command -s, mode "default"
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $g+a mode "audio"
+
+
+
+
+# Volume controls
 set $volume_command ~/.config/i3/volume.sh
 bindsym XF86AudioRaiseVolume exec --no-startup-id $volume_command 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id $volume_command 5%-
@@ -193,9 +214,6 @@ exec --no-startup-id ~/.config/i3/cc.sh
 
 # File Manager
 bindsym $g+Return exec nautilus
-
-# Quick Status Popup
-# TODO
 
 
 

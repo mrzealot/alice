@@ -13,7 +13,7 @@
     - modify corresponding line: `%sudo ALL=(ALL) NOPASSWD: ALL`
 
 - Install basic dependencies:
-    - `sudo apt install curl git vim maim x11-xserver-utils xclip`
+    - `sudo apt install curl git vim maim bluez x11-xserver-utils xclip`
 
 - Initialize dotfiles (inspired by [this guide](https://www.atlassian.com/git/tutorials/dotfiles)):
 
@@ -39,11 +39,12 @@
         alice checkout
         ```
 
-    - ignore untraced files: `alice config status.showUntrackedFiles no`
+    - ignore untracked files: `alice config status.showUntrackedFiles no`
 
     - make all tracked scripts executable: `alice ls-tree -r master --name-only | grep .sh$ | xargs chmod +x`
 
 - Setup WM-related stuff:
+
     - dedicated i3 repo for fresher versions
 
         ```bash
@@ -54,6 +55,7 @@
         ```
 
     - `sudo apt install i3 i3lock feh compton`
+    
     - a separate package to control backlight:
 
         ```bash
@@ -73,15 +75,15 @@
 
     - set i3 as the default WM: `sudo update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/bin/i3 60`
 
-- Install `dunst` for custom notifications
+    - install `dunst` for custom notifications
 
-    ```bash
-    sudo apt install libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libnotify-dev
-    mkdir -p .builds/dunst
-    git clone https://github.com/dunst-project/dunst.git .builds/dunst
-    cd .builds/dunst
-    make
-    sudo make install
-    make dunstify
-    sudo install -Dm755 dunstify /usr/local/bin/dunstify
-    ```
+        ```bash
+        sudo apt install libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libnotify-dev
+        mkdir -p .builds/dunst
+        git clone https://github.com/dunst-project/dunst.git .builds/dunst
+        cd .builds/dunst
+        make
+        sudo make install
+        make dunstify
+        sudo install -Dm755 dunstify /usr/local/bin/dunstify
+        ```
