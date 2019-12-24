@@ -1,0 +1,1 @@
+export PATH="$HOME/bin:/snap/bin:$PATH"

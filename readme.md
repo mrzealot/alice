@@ -87,3 +87,9 @@
         make dunstify
         sudo install -Dm755 dunstify /usr/local/bin/dunstify
         ```
+
+- Setup shell
+
+    - `sudo apt install zsh`
+
+    - make it the default by `chsh -s $(which zsh)`
