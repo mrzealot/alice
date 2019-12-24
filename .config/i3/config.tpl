@@ -152,6 +152,9 @@ bindsym XF86AudioMicMute exec ~/.config/i3/mic.sh
 # Time popup
 bindsym $g+m exec --no-startup-id ~/.config/i3/time.sh
 
+# Screenshots
+bindsym --release Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
+bindsym --release $c+Print exec --no-startup-id maim -s ~/.screenshots/$(date "+%F--%H-%M-%S").png
 
 
 
