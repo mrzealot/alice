@@ -2,18 +2,19 @@
 
 ## System Prep
 
-- Install a fresh Ubuntu in "Minimal" mode with the following partitions:
-    - `boot` (~1GB)
-    - `swap` (~size of RAM)
-    - `root` (~50GB)
-    - `home` (rest)
+- Install a fresh Ubuntu in "Minimal" mode
 
-- Allow the sudo group to `sudo` without a password
-    - `sudo visudo`
-    - modify corresponding line: `%sudo ALL=(ALL) NOPASSWD: ALL`
+    - allocate the following partitions:
+        - `boot` (~1GB)
+        - `swap` (~size of RAM)
+        - `root` (~50GB)
+        - `home` (rest)
 
-- Install basic dependencies:
-    - `sudo apt install curl git vim maim bluez x11-xserver-utils xclip`
+    - allow the sudo group to `sudo` without a password
+        - `sudo visudo`
+        - modify the corresponding line: `%sudo ALL=(ALL) NOPASSWD: ALL`
+
+    - install basic dependencies: `sudo apt install curl git vim maim bluez x11-xserver-utils xclip`
 
 - Initialize dotfiles (inspired by [this guide](https://www.atlassian.com/git/tutorials/dotfiles)):
 
@@ -89,12 +90,18 @@
         cd
         ```
 
-- Setup shell
+- Setup terminal and shell
 
-    - `sudo apt install zsh`
+    - `sudo apt install zsh rxvt-unicode`
 
-    - make it the default by `chsh -s $(which zsh)`
+    - make zsh the default shell by `chsh -s $(which zsh)`
 
 - Setup browser
 
     - install according to [this doc](https://brave-browser.readthedocs.io/en/latest/installing-brave.html)
+
+- Setup editor
+
+    - `sudo snap install --classic code`
+
+    - set as the default editor: `sudo update-alternatives --install /usr/bin/editor editor /snap/bin/code 60`
