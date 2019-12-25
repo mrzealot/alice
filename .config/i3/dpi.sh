@@ -26,4 +26,14 @@ else
     dpi=$low
 fi
 
-echo "Xft.dpi: $dpi" | xrdb -merge
+# Initial DPI setting is different, because we actually
+# fill in a placeholder in the .Xresources file
+# (otherwise the setting would be overwritten by a later
+# Xsession pass)
+if [[ $1 = 'init' ]]; then
+    file="$HOME/.Xresources"
+    cp $file.tpl $file
+    sed -i "s/INITIAL_DPI_HERE/$dpi/" $file
+else
+    echo "Xft.dpi: $dpi" | xrdb -merge
+fi

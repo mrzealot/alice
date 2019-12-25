@@ -187,18 +187,20 @@ exec --no-startup-id compton -b
 # Notification daemon
 exec --no-startup-id dunst -config ~/.dunstrc
 
+# Speed up keyboard bluetooth, if we can
+exec --no-startup-id "source ~/.zaliases && btspeed"
+
 
 
 
 # Program-specific settings
 
-# Initialize DPI
-exec --no-startup-id ~/.config/i3/dpi.sh low
-
 # Browser
 # No specific confinement, but automatically started on workspace 1
-bindsym $g+b exec brave-browser
-exec --no-startup-id i3-msg 'workspace 1; exec brave-browser'
+assign [instance="alice_main_udd"] 1
+bindsym $g+b exec brave-browser --user-data-dir=$HOME/.alice_sub_udd
+exec --no-startup-id "echo `xrdb -query | grep dpi` >> i3log"
+exec brave-browser --user-data-dir=$HOME/.alice_main_udd
 
 # Editor
 assign [class="Code"] 2

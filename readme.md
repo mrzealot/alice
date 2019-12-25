@@ -86,6 +86,7 @@
         sudo make install
         make dunstify
         sudo install -Dm755 dunstify /usr/local/bin/dunstify
+        cd
         ```
 
 - Setup shell
@@ -93,3 +94,15 @@
     - `sudo apt install zsh`
 
     - make it the default by `chsh -s $(which zsh)`
+
+- Setup browser
+
+    - install according to [this doc](https://brave-browser.readthedocs.io/en/latest/installing-brave.html)
+
+    - prepare user data directories
+
+        ```bash
+        mkdir .alice_main_udd
+        mkdir .alice_cc_udd
+        ln -s .alice_main_udd .alice_sub_udd
+        ```
