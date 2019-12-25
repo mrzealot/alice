@@ -2,10 +2,11 @@
 /* https://github.com/davatorium/rofi-themes/blob/master/Official%20Themes/arthur.rasi */
 
 configuration {
-    modi: "drun";
+    modi: "combi";
+    combi-modi: "drun,window,run";
     font: "hack 30";
     show-icons: true;
-    display-drun: ">";
+    display-combi: ">";
 }
 
 * {

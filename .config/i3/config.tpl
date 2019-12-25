@@ -199,7 +199,6 @@ exec --no-startup-id "source ~/.zaliases && btspeed"
 # No specific confinement, but automatically started on workspace 1
 assign [instance="alice_main_udd"] 1
 bindsym $g+b exec brave-browser --user-data-dir=$HOME/.alice_sub_udd
-exec --no-startup-id "echo `xrdb -query | grep dpi` >> i3log"
 exec brave-browser --user-data-dir=$HOME/.alice_main_udd
 
 # Editor
@@ -221,7 +220,7 @@ exec --no-startup-id ~/.config/i3/cc.sh
 bindsym $g+Return exec nautilus
 
 # Launcher
-bindsym $g+Tab exec rofi -show drun
+bindsym $g+Tab exec rofi -show combi
 
 
 

@@ -98,11 +98,3 @@
 - Setup browser
 
     - install according to [this doc](https://brave-browser.readthedocs.io/en/latest/installing-brave.html)
-
-    - prepare user data directories
-
-        ```bash
-        mkdir .alice_main_udd
-        mkdir .alice_cc_udd
-        ln -s .alice_main_udd .alice_sub_udd
-        ```
