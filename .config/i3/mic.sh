@@ -10,8 +10,12 @@ state=$(sudo amixer set Capture toggle | tail -1 | awk '{print $7}' | sed 's/[^a
 
 if [[ $state == "off" ]]; then
     # Show the mic muted notification
-    dunstify -a "micToggle" -u low -i $HOME/.icons/mic_off.png -r "$id" "" "<span size=\"80000\">Off</span>"
+    icon="mic_off"
+    msg="Off"
 else
     # Show the mic active notification
-    dunstify -a "micToggle" -u low -i $HOME/.icons/mic.png -r "$id" "" "<span size=\"80000\">On</span>"
+    icon="mic"
+    msg="On"
 fi
+
+. $HOME/.config/i3/notify.sh "micToggle" 4116304 $icon "<span size=\"80000\">$msg</span>"

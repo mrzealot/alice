@@ -192,6 +192,9 @@ exec --no-startup-id dunst -config ~/.dunstrc
 
 # Program-specific settings
 
+# Initialize DPI
+exec --no-startup-id ~/.config/i3/dpi.sh low
+
 # Browser
 # No specific confinement, but automatically started on workspace 1
 bindsym $g+b exec brave-browser

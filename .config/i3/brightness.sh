@@ -2,12 +2,9 @@
 
 # Change laptop screen brightness
 
-# Arbitrary but unique message id
-id="4116303"
-
-# Change the volume
+# Execute whatever adjustment the command line says
 sudo light "$@" > /dev/null
 
-# Query amixer for the current volume and whether or not the speaker is muted
+# Query for the new value and notify
 value=$(light | sed 's/\..*//')
-dunstify -a "changeBrightness" -u low -i $HOME/.icons/lightbulb.png -r "$id" "" "<span size=\"80000\">${value}</span>"
+. $HOME/.config/i3/notify.sh changeBrightness 4116303 lightbulb "<span size=\"80000\">${value}</span>"

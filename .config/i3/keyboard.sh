@@ -2,9 +2,6 @@
 
 # Disable the built-in keyboard/touchpad
 
-# Arbitrary but unique message id
-id="4116305"
-
 # Get states
 keyboard=$(  xinput -list | grep Translated.*keyboard | sed 's/.*\bid=//' | awk '{print $1}')
 touchpad=$(  xinput -list | grep TouchPad             | sed 's/.*\bid=//' | awk '{print $1}')
@@ -17,10 +14,14 @@ if [[ $state == "1" ]]; then
     xinput --disable $keyboard
     xinput --disable $touchpad
     xinput --disable $trackpoint
-    dunstify -a "keyboardToggle" -u low -i $HOME/.icons/keyboard_off.png -r "$id" "" "<span size=\"80000\">Off</span>"
+    icon="keyboard_off"
+    msg="Off"
 else
     xinput --enable $keyboard
     xinput --enable $touchpad
     xinput --enable $trackpoint
-    dunstify -a "keyboardToggle" -u low -i $HOME/.icons/keyboard.png -r "$id" "" "<span size=\"80000\">On</span>"
+    icon="keyboard"
+    msg="On"
 fi
+
+. $HOME/.config/i3/notify.sh keyboardToggle 4116305 $icon "<span size=\"80000\">$msg</span>"

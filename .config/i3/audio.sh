@@ -3,7 +3,7 @@
 # Switch audio output
 
 # Load hardware info
-source $HOME/.hardware.sh
+. $HOME/.hardware.sh
 
 message() {
   echo "usage: audio [option]"
@@ -75,7 +75,7 @@ for i in $(pacmd list-sink-inputs | grep index | awk '{print $2}'); do
 done
 
 echo "Sending notification"
-dunstify -a "changeAudioOutput" -u low -i $HOME/.icons/$icon.png -r "4116306" "" "<span size=\"15000\">Audio Output</span>\n<span size=\"30000\">$label</span>"
+. $HOME/.config/i3/notify.sh changeAudioOutput 4116306 $icon "<span size=\"15000\">Audio Output</span>\n<span size=\"30000\">$label</span>"
 
 echo "Done"
 exit 0
