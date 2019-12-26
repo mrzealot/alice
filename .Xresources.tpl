@@ -40,10 +40,11 @@ URxvt.internalBorder: 10
 URxvt.geometry: 120x40
 
 ! font
-URxvt.font:             xft:Hack-Regular:pixelsize=22,xft:Symbola
-URxvt.boldFont:         xft:Hack-Bold:pixelsize=22:weight=bold,xft:Symbola
-URxvt.italicFont:       xft:Hack-Italic:pixelsize=22:slant=italic,xft:Symbola
-URxvt.boldItalicFont:   xft:Hack-Bold-Italic:pixelsize=22:weight=bold:slant=italic,xft:Symbola
+URxvt.letterSpace:      -1
+URxvt.font:             xft:Hack-Regular:size=13,xft:Symbola
+URxvt.boldFont:         xft:Hack-Bold:size=13:weight=bold,xft:Symbola
+URxvt.italicFont:       xft:Hack-Italic:size=13:slant=italic,xft:Symbola
+URxvt.boldItalicFont:   xft:Hack-Bold-Italic:size=13:weight=bold:slant=italic,xft:Symbola
 
 
 
@@ -71,7 +72,7 @@ URxvt.boldItalicFont:   xft:Hack-Bold-Italic:pixelsize=22:weight=bold:slant=ital
 #define base0F #b08060
 
 *.foreground:   base07
-*.background:   [85]#000000
+*.background:   [89]#000000
 *.cursorColor:  base07
 
 *.color0:       base00
