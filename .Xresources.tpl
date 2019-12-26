@@ -23,6 +23,9 @@ URxvt*scrollWithBuffer: true
 ! scroll back to the bottom on keypress
 URxvt*scrollTtyKeypress: true
 
+! scroll only five lines at a time
+URxvt*mouseWheelScrollPage: false
+
 ! allow scrolling within pagers
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
@@ -34,7 +37,6 @@ URxvt.transparent: false ! not using fake transparency, see background for the "
 URxvt.depth: 32
 URxvt.scrollBar: false
 URxvt.saveLines: 65536
-URxvt.mouseWheelScrollPage: true
 URxvt.borderless: true
 URxvt.internalBorder: 10
 URxvt.geometry: 120x40

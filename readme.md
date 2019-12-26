@@ -96,6 +96,8 @@
 
     - make zsh the default shell by `chsh -s $(which zsh)`
 
+    - install Oh-my-zsh! by `sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+
 - Setup browser
 
     - install according to [this doc](https://brave-browser.readthedocs.io/en/latest/installing-brave.html)
