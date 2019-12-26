@@ -34,6 +34,8 @@ if [[ $1 = 'init' ]]; then
     file="$HOME/.Xresources"
     cp $file.tpl $file
     sed -i "s/INITIAL_DPI_HERE/$dpi/" $file
+    # also set a global "var" with this value
+    echo $dpi > ~/.base_dpi
 else
     echo "Xft.dpi: $dpi" | xrdb -merge
 fi

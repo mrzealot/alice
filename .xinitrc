@@ -23,7 +23,7 @@ if [ -z $external ]; then
     sed -i "s/EXTERNAL_DISPLAY/$internal/" $i3conf
 else
     # with external display
-    xrandr --output $internal --left-of $external --preferred --output $external --primary --size 1920x1080
+    xrandr --output $internal --left-of $external --preferred --output $external --primary --mode 1920x1080
     sed -i "s/EXTERNAL_DISPLAY/$external/" $i3conf
 fi
 
