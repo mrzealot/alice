@@ -194,6 +194,9 @@ exec --no-startup-id "source ~/.zaliases && btspeed"
 exec --no-startup-id autocutsel -f -s PRIMARY
 exec --no-startup-id autocutsel -f -s CLIPBOARD
 
+# Automatically adjust screen color temperature
+exec --no-startup-id redshift -c ~/.config/redshift/redshift.conf
+
 
 
 
