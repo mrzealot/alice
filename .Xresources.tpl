@@ -30,12 +30,13 @@ URxvt.secondaryScroll: 0
 ! styling
 URxvt.urgentOnBell: true
 URxvt.cursorBlink: true
-URxvt.transparent: true
-URxvt.shading: 20
+URxvt.transparent: false ! not using fake transparency, see background for the "real" one
+URxvt.depth: 32
 URxvt.scrollBar: false
 URxvt.saveLines: 65536
 URxvt.mouseWheelScrollPage: true
 URxvt.borderless: true
+URxvt.internalBorder: 10
 URxvt.geometry: 120x40
 
 ! font
@@ -69,13 +70,9 @@ URxvt.boldItalicFont:   xft:Hack-Bold-Italic:pixelsize=22:weight=bold:slant=ital
 #define base0E #9989cc
 #define base0F #b08060
 
-*.foreground:   base05
-#ifdef background_opacity
-*.background:   [background_opacity]base00
-#else
-*.background:   base00
-#endif
-*.cursorColor:  base05
+*.foreground:   base07
+*.background:   [85]#000000
+*.cursorColor:  base07
 
 *.color0:       base00
 *.color1:       base08

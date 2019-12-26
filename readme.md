@@ -14,7 +14,7 @@
         - `sudo visudo`
         - modify the corresponding line: `%sudo ALL=(ALL) NOPASSWD: ALL`
 
-    - install basic dependencies: `sudo apt install curl git vim maim bluez x11-xserver-utils xclip`
+    - install basic dependencies: `sudo apt install curl git vim maim bluez x11-xserver-utils xclip autocutsel`
 
 - Initialize dotfiles (inspired by [this guide](https://www.atlassian.com/git/tutorials/dotfiles)):
 

@@ -190,15 +190,20 @@ exec --no-startup-id dunst -config ~/.dunstrc
 # Speed up keyboard bluetooth, if we can
 exec --no-startup-id "source ~/.zaliases && btspeed"
 
+# Keep clipboards in sync
+exec --no-startup-id autocutsel -f -s PRIMARY
+exec --no-startup-id autocutsel -f -s CLIPBOARD
+
 
 
 
 # Program-specific settings
 
 # Browser
-# No specific confinement, but automatically started on workspace 1
+# Confinement based on UDD to differentiate from CC
+# Can still be moved afterwards if needed
 assign [instance="alice_main_udd"] 1
-bindsym $g+b exec brave-browser --user-data-dir=$HOME/.alice_sub_udd
+bindsym $g+b exec brave-browser --user-data-dir=$HOME/.alice_main_udd
 exec brave-browser --user-data-dir=$HOME/.alice_main_udd
 
 # Editor
@@ -208,8 +213,8 @@ assign [class="Code"] 2
 bindsym $g+c exec code
 
 # Terminal
-exec --no-startup-id i3-msg 'workspace 3; exec gnome-terminal; workspace 1'
-bindsym $g+space exec i3-sensible-terminal
+exec --no-startup-id i3-msg 'workspace 3; exec urxvt; workspace 1'
+bindsym $g+space exec urxvt
 
 # Control Center
 assign [instance="alice_cc_udd"] 9
