@@ -104,4 +104,9 @@
 
     - `sudo snap install --classic code`
 
-    - set as the default editor: `sudo update-alternatives --install /usr/bin/editor editor /snap/bin/code 60`
+    - set as the default editor:
+
+        ```bash
+        sudo update-alternatives --install /usr/bin/editor editor /snap/bin/code 60
+        sudo update-alternatives --install /usr/bin/gnome-text-editor gnome-text-editor /snap/bin/code 60
+        ```
