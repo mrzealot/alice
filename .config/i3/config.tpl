@@ -13,11 +13,22 @@ font pango:monospace 8
 
 # Styling
 default_border none
+default_floating_border none
+set $border_width 3
+set_from_resource $bcolor color1 #f02020
+
+# Color override for border flashing
+# class                 border  backgr. text    indicator child_border
+client.focused          #000000 #000000 #000000 $bcolor   $bcolor
+client.focused_inactive #000000 #000000 #000000 #000000   #000000
+client.unfocused        #000000 #000000 #000000 #000000   #000000
+client.urgent           #000000 #000000 #000000 #000000   #000000
+client.placeholder      #000000 #000000 #000000 #000000   #000000
 
 # Bottom bar
 # mode = hide for now as a training wheel, will set to "invisible" later
 bar {
-        mode hide
+        mode invisible
         status_command i3status
 }
 
@@ -27,17 +38,29 @@ floating_modifier $a
 
 
 
-# Change focus
-bindsym $g+Left focus left
-bindsym $g+Down focus down
-bindsym $g+Up focus up
-bindsym $g+Right focus right
+# Check focus
+bindsym $g+g exec i3-msg border pixel $border_width
+bindsym --release $g+g exec i3-msg border pixel 0
+
+# Change focus (with border flash)
+bindsym $g+Left  exec i3-msg border pixel $border_width; focus left
+bindsym $g+Down  exec i3-msg border pixel $border_width; focus down
+bindsym $g+Up    exec i3-msg border pixel $border_width; focus up
+bindsym $g+Right exec i3-msg border pixel $border_width; focus right
+bindsym --release $g+Left  exec i3-msg border pixel 0
+bindsym --release $g+Down  exec i3-msg border pixel 0
+bindsym --release $g+Up    exec i3-msg border pixel 0
+bindsym --release $g+Right exec i3-msg border pixel 0
 
 # Move focused window
-bindsym $g+$s+Left move left
-bindsym $g+$s+Down move down
-bindsym $g+$s+Up move up
-bindsym $g+$s+Right move right
+bindsym $g+$s+Left  exec i3-msg border pixel $border_width; move left
+bindsym $g+$s+Down  exec i3-msg border pixel $border_width; move down
+bindsym $g+$s+Up    exec i3-msg border pixel $border_width; move up
+bindsym $g+$s+Right exec i3-msg border pixel $border_width; move right
+bindsym --release $g+$s+Left  exec i3-msg border pixel 0
+bindsym --release $g+$s+Down  exec i3-msg border pixel 0
+bindsym --release $g+$s+Up    exec i3-msg border pixel 0
+bindsym --release $g+$s+Right exec i3-msg border pixel 0
 
 # Resize focused window
 bindsym $g+$c+Left resize shrink width 10 px or 10 ppt
@@ -124,10 +147,10 @@ mode "power" {
         bindsym s exec --no-startup-id $power_command -s, mode "default"
 
         # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+        bindsym Return mode "default"; exec --no-startup-id ~/.config/i3/mode.sh
+        bindsym Escape mode "default"; exec --no-startup-id ~/.config/i3/mode.sh
 }
-bindsym $g+q mode "power"
+bindsym $g+q mode "power"; exec --no-startup-id ~/.config/i3/mode.sh power
 
 
 
@@ -145,10 +168,10 @@ mode "audio" {
         bindsym s exec --no-startup-id $audio_command -s, mode "default"
 
         # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+        bindsym Return mode "default"; exec --no-startup-id ~/.config/i3/mode.sh
+        bindsym Escape mode "default"; exec --no-startup-id ~/.config/i3/mode.sh
 }
-bindsym $g+a mode "audio"
+bindsym $g+a mode "audio"; exec --no-startup-id ~/.config/i3/mode.sh audio
 
 
 
@@ -189,10 +212,6 @@ exec --no-startup-id dunst -config ~/.dunstrc
 
 # Speed up keyboard bluetooth, if we can
 exec --no-startup-id "source ~/.zaliases && btspeed"
-
-# Keep clipboards in sync
-exec --no-startup-id autocutsel -f -s PRIMARY
-exec --no-startup-id autocutsel -f -s CLIPBOARD
 
 # Automatically adjust screen color temperature
 exec --no-startup-id redshift -c ~/.config/redshift/redshift.conf
