@@ -98,8 +98,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-. ~/.zsh/aliases.zsh
+for script in .zsh/*; do
+    . $script
+done
 
 autoload -U colors && colors
 PS1="%{$fg_bold[green]%}%~ %{$fg_bold[white]%}>%{$reset_color%} "
