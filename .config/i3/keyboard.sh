@@ -24,4 +24,4 @@ else
     msg="On"
 fi
 
-. $HOME/.config/i3/notify.sh keyboardToggle 4116305 $icon "<span size=\"80000\">$msg</span>"
+$HOME/.config/i3/notify.sh keyboardToggle 4116305 $icon "<span size=\"80000\">$msg</span>"

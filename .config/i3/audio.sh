@@ -75,7 +75,7 @@ for i in $(pacmd list-sink-inputs | grep index | awk '{print $2}'); do
 done
 
 echo "Sending notification"
-. $HOME/.config/i3/notify.sh changeAudioOutput 4116306 $icon "<span size=\"15000\">Audio Output</span>\n<span size=\"30000\">$label</span>"
+$HOME/.config/i3/notify.sh changeAudioOutput 4116300 $icon "<span size=\"15000\">Audio Output</span>\n<span size=\"30000\">$label</span>"
 
 echo "Done"
 exit 0

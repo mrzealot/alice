@@ -18,4 +18,4 @@ else
     msg="On"
 fi
 
-. $HOME/.config/i3/notify.sh "micToggle" 4116304 $icon "<span size=\"80000\">$msg</span>"
+$HOME/.config/i3/notify.sh "micToggle" 4116304 $icon "<span size=\"80000\">$msg</span>"

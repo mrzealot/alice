@@ -5,7 +5,7 @@
 # it always needs to start in high dpi mode
 
 sleep 1s
-. $HOME/.config/i3/dpi.sh high
+$HOME/.config/i3/dpi.sh high
 brave-browser --user-data-dir=$HOME/.alice_cc_udd &
 sleep 1s
-. $HOME/.config/i3/dpi.sh low
+$HOME/.config/i3/dpi.sh low
