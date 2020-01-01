@@ -35,11 +35,8 @@
         "javascriptreact",
         "json",
         "jsonc",
-        "latex",
         "less",
-        "markdown",
         "php",
-        "plaintext",
         "pug",
         "python",
         "restructuredtext",
@@ -53,10 +50,17 @@
         "yml"
     ],
     "editor.fontFamily": "'Hack', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "files.associations": {
-        ".zaliases": "shellscript"
-    },
     "window.menuBarVisibility": "default",
     "workbench.statusBar.visible": true,
-    "workbench.editor.showTabs": true
+    "workbench.editor.showTabs": true,
+    "spellright.configurationScope": "user",
+    "spellright.language": [
+        "en_US",
+        "hu_HU"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext"
+    ]
 }

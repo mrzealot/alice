@@ -112,3 +112,9 @@
         sudo update-alternatives --install /usr/bin/editor editor /snap/bin/code 60
         sudo update-alternatives --install /usr/bin/gnome-text-editor gnome-text-editor /snap/bin/code 60
         ```
+
+    - set up correct spell check
+
+        - install the `Spell Right` extension (in addition to the default `Code Spell Checker`)
+
+        - give it the system `hunspell` dictionaries: `ln -s /usr/share/hunspell ~/.config/Code/Dictionaries`
