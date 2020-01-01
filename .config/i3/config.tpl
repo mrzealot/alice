@@ -136,6 +136,9 @@ bindsym $g+eacute exec $lock_command
 # Power management
 set $power_command ~/.config/i3/power.sh
 mode "power" {
+        # D for display reconfig
+        bindsym d exec --no-startup-id ~/.config/i3/display.sh reset, mode "default"
+
         # R for reboot
         bindsym r exec --no-startup-id $power_command -r, mode "default"
 

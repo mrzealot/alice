@@ -10,22 +10,7 @@ i3conf="$HOME/.config/i3/config"
 cp $i3conf.tpl $i3conf
 
 # monitor setup (needed for default window placement)
-internal=$(xrandr | grep "^eDP" | awk '{print $1}')
-if [ -z $internal ]; then
-    echo "ERROR: Internal monitor cannot be detected!";
-fi
-sed -i "s/INTERNAL_DISPLAY/$internal/" $i3conf
-
-external=$(xrandr | grep "\bconnected" | grep -v "$internal" | awk '{print $1}')
-if [ -z $external ]; then
-    # just the laptop
-    xrandr --auto
-    sed -i "s/EXTERNAL_DISPLAY/$internal/" $i3conf
-else
-    # with external display
-    xrandr --output $internal --left-of $external --preferred --output $external --primary --mode 1920x1080
-    sed -i "s/EXTERNAL_DISPLAY/$external/" $i3conf
-fi
+$HOME/.config/i3/display.sh init
 
 # set initial DPI
 $HOME/.config/i3/dpi.sh init
