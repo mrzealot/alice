@@ -1,5 +1,12 @@
 # Alice
 
+The Alice project is my continuously evolving set of dotfiles for a completely customized, (mostly) keyboard-driven linux experience.
+It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficiency.
+
+- Is it a really forced acronym made up after the fact? Yes.
+- Is it really called Alice because of my infatuation with the children's tale? Yes.
+- Is it accurate and fitting, though? Also yes.
+
 ## System Prep
 
 - Install a fresh Ubuntu in "Minimal" mode
