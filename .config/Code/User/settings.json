@@ -62,5 +62,6 @@
         "markdown",
         "latex",
         "plaintext"
-    ]
+    ],
+    "spellright.notificationClass": "information"
 }
