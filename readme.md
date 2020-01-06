@@ -29,7 +29,7 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
     
         ```bash
         cd
-        git clone --bare https://github.com/mrzealot/alice .alice
+        git clone --bare git@github.com:mrzealot/alice.git .alice
         alias alice='/usr/bin/git --git-dir=$HOME/.alice/ --work-tree=$HOME'
         ```
 
@@ -101,8 +101,6 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
 
     - `sudo apt install zsh rxvt-unicode`
 
-    - make zsh the default shell by `chsh -s $(which zsh)`
-
     - install Oh-my-zsh! by `sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 
 - Setup browser
@@ -125,3 +123,7 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
         - install the `Spell Right` extension (in addition to the default `Code Spell Checker`)
 
         - give it the system `hunspell` dictionaries: `ln -s /usr/share/hunspell ~/.config/Code/Dictionaries`
+
+- Setup media/office stuff
+
+    - `sudo apt install transmission vlc gimp inkscape libreoffice`

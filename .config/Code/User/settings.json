@@ -2,7 +2,7 @@
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "editor.mouseWheelZoom": true,
-    "workbench.activityBar.visible": true,
+    "workbench.activityBar.visible": false,
     "breadcrumbs.enabled": false,
     "diffEditor.renderSideBySide": true,
     "terminal.integrated.rendererType": "dom",
@@ -50,8 +50,8 @@
         "yml"
     ],
     "editor.fontFamily": "'Hack', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "window.menuBarVisibility": "default",
-    "workbench.statusBar.visible": true,
+    "window.menuBarVisibility": "toggle",
+    "workbench.statusBar.visible": false,
     "workbench.editor.showTabs": true,
     "spellright.configurationScope": "user",
     "spellright.language": [
