@@ -21,7 +21,7 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
         - `sudo visudo`
         - modify the corresponding line: `%sudo ALL=(ALL) NOPASSWD: ALL`
 
-    - install basic dependencies: `sudo apt install curl git vim maim bluez x11-xserver-utils xclip`
+    - install basic dependencies: `sudo apt install curl git nodejs npm vim htop maim bluez x11-xserver-utils xclip baobab`
 
 - Initialize dotfiles (inspired by [this guide](https://www.atlassian.com/git/tutorials/dotfiles)):
 
@@ -124,6 +124,15 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
 
         - give it the system `hunspell` dictionaries: `ln -s /usr/share/hunspell ~/.config/Code/Dictionaries`
 
+- Setup my own bins
+
+    - coin
+
+        ```bash
+        git clone git@github.com:mrzealot/coin.git .coin
+        cd .coin && sudo npm link; cd
+        ```
+
 - Setup media/office stuff
 
-    - `sudo apt install transmission vlc gimp inkscape libreoffice`
+    - `sudo apt install transmission vlc gimp inkscape audacity libreoffice calibre`
