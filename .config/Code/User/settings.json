@@ -51,7 +51,7 @@
     ],
     "editor.fontFamily": "'Hack', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "window.menuBarVisibility": "toggle",
-    "workbench.statusBar.visible": false,
+    "workbench.statusBar.visible": true,
     "workbench.editor.showTabs": true,
     "spellright.configurationScope": "user",
     "spellright.language": [
@@ -63,5 +63,8 @@
         "latex",
         "plaintext"
     ],
-    "spellright.notificationClass": "information"
+    "spellright.notificationClass": "information",
+    "editor.minimap.enabled": true,
+    "markdown.extension.italic.indicator": "_",
+    "markdown.extension.toc.updateOnSave": false
 }

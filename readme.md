@@ -23,6 +23,13 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
 
     - install basic dependencies: `sudo apt install curl git nodejs npm vim htop maim bluez x11-xserver-utils xclip baobab`
 
+    - upgrade node
+
+        ```bash
+        sudo npm install -g n
+        sudo n latest
+        ```
+
 - Initialize dotfiles (inspired by [this guide](https://www.atlassian.com/git/tutorials/dotfiles)):
 
     - clone repo

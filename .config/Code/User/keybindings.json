@@ -164,5 +164,9 @@
     {
         "key": "ctrl+k z",
         "command": "-workbench.action.toggleZenMode"
+    },
+    {
+        "key": "ctrl+shift+alt+[Quote]",
+        "command": "editor.action.toggleMinimap"
     }
 ]
