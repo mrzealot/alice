@@ -64,7 +64,5 @@
         "plaintext"
     ],
     "spellright.notificationClass": "information",
-    "editor.minimap.enabled": true,
-    "markdown.extension.italic.indicator": "_",
-    "markdown.extension.toc.updateOnSave": false
+    "editor.minimap.enabled": true
 }

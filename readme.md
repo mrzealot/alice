@@ -142,4 +142,4 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
 
 - Setup media/office stuff
 
-    - `sudo apt install transmission vlc gimp inkscape audacity libreoffice calibre`
+    - `sudo apt install transmission vlc kolourpaint gimp inkscape audacity libreoffice calibre`
