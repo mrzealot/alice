@@ -110,6 +110,12 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
 
     - install Oh-my-zsh! by `sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 
+    - install external plugins:
+
+        ```bash
+        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+        ```
+
 - Setup browser
 
     - install according to [this doc](https://brave-browser.readthedocs.io/en/latest/installing-brave.html)
