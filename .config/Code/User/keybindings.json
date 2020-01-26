@@ -168,5 +168,19 @@
     {
         "key": "ctrl+shift+alt+[Quote]",
         "command": "editor.action.toggleMinimap"
+    },
+    {
+        "key": "ctrl+shift+alt+t",
+        "when": "!sideBarFocus",
+        "command": "workbench.action.focusSideBar"
+    },
+    {
+        "key": "ctrl+shift+alt+t",
+        "when": "sideBarFocus",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+    {
+        "key": "ctrl+0",
+        "command": "-workbench.action.focusSideBar"
     }
 ]
