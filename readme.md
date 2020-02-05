@@ -69,7 +69,7 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
         sudo apt update
         ```
 
-    - `sudo apt install i3 i3lock feh compton rofi redshift`
+    - `sudo apt install i3 i3lock feh compton rofi redshift playerctl`
 
     - a separate package to control backlight:
 

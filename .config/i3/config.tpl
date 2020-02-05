@@ -185,13 +185,24 @@ bindsym $g+a mode "audio"; exec --no-startup-id ~/.config/i3/mode.sh audio
 # Volume controls
 set $volume_command ~/.config/i3/volume.sh
 bindsym XF86AudioRaiseVolume exec --no-startup-id $volume_command 5%+
+bindsym $s+XF86AudioRaiseVolume exec --no-startup-id $volume_command 1%+
 bindsym XF86AudioLowerVolume exec --no-startup-id $volume_command 5%-
+bindsym $s+XF86AudioLowerVolume exec --no-startup-id $volume_command 1%-
 bindsym XF86AudioMute exec --no-startup-id $volume_command toggle
+
+# Media controls
+set $media_command ~/.config/i3/media.sh
+bindsym XF86AudioPlay exec --no-startup-id $media_command play-pause
+bindsym XF86AudioPause exec --no-startup-id $media_command play-pause
+bindsym XF86AudioNext exec --no-startup-id $media_command next
+bindsym XF86AudioPrev exec --no-startup-id $media_command previous
 
 # Screen brightness controls
 set $brightness_command ~/.config/i3/brightness.sh
-bindsym XF86MonBrightnessUp exec $brightness_command -A 5 # increase
-bindsym XF86MonBrightnessDown exec $brightness_command -U 5 # decrease
+bindsym XF86MonBrightnessUp exec $brightness_command -A 5
+bindsym $s+XF86MonBrightnessUp exec $brightness_command -A 1
+bindsym XF86MonBrightnessDown exec $brightness_command -U 5
+bindsym $s+XF86MonBrightnessDown exec $brightness_command -U 1
 
 # Disabling built-in keyboard/touchpad
 bindsym $g+d exec ~/.config/i3/keyboard.sh
