@@ -1,5 +1,5 @@
 # add snaps to path
-export PATH="$HOME/bin:/snap/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:/snap/bin:$PATH"
 
 # also add snap stuff to xdg
 # (also, this needs to be prefixed with the defaults when tampering,
