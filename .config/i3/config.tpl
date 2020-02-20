@@ -173,6 +173,9 @@ mode "audio" {
         # S for soundbar (Bluetooth)
         bindsym s exec --no-startup-id $audio_command -s, mode "default"
 
+        # B for earbuds (Bluetooth)
+        bindsym b exec --no-startup-id $audio_command -b, mode "default"
+
         # back to normal: Enter or Escape
         bindsym Return mode "default"; exec --no-startup-id ~/.config/i3/mode.sh
         bindsym Escape mode "default"; exec --no-startup-id ~/.config/i3/mode.sh
