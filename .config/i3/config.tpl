@@ -96,6 +96,7 @@ workspace 6 output $ex
 workspace 7 output $ex 
 workspace 8 output $ex 
 workspace 9 output $in
+workspace 0 output $in
 
 # Switch to workspace
 bindsym $g+n workspace 1
@@ -107,6 +108,7 @@ bindsym $g+u workspace 6
 bindsym $g+y workspace 7
 bindsym $g+aacute workspace 8
 bindsym $g+h workspace 9
+bindsym $g+$s+h workspace 0
 
 # Move focused container to workspace
 bindsym $g+$c+n move container to workspace 1
@@ -118,6 +120,7 @@ bindsym $g+$c+u move container to workspace 6
 bindsym $g+$c+y move container to workspace 7
 bindsym $g+$c+aacute move container to workspace 8
 bindsym $g+$c+h move container to workspace 9
+bindsym $g+$s+$c+h move container to workspace 0
 
 
 
@@ -262,6 +265,10 @@ bindsym $g+space exec urxvt
 assign [instance="alice_cc_udd"] 9
 bindsym $g+z exec --no-startup-id ~/.config/i3/cc.sh
 exec --no-startup-id ~/.config/i3/cc.sh
+
+# Clock
+assign [instance="myclock"] 0
+exec --no-startup-id urxvt -name myclock -e tty-clock -c
 
 # File Manager
 bindsym $g+Return exec nautilus
