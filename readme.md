@@ -143,7 +143,14 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
 
         ```bash
         git clone git@github.com:mrzealot/coin.git .coin
-        cd .coin && sudo npm link; cd
+        cd .coin && npm install && sudo npm link; cd
+        ```
+
+    - whip
+
+        ```bash
+        git clone git@github.com:mrzealot/whip.git .whip
+        cd .whip && npm install && sudo npm link; cd
         ```
 
 - Setup media/office stuff
