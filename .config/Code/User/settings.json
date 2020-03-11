@@ -64,5 +64,9 @@
         "plaintext"
     ],
     "spellright.notificationClass": "information",
-    "editor.minimap.enabled": true
+    "editor.minimap.enabled": true,
+    "wordcounter.count_chars": false,
+    "wordcounter.count_paragraphs": false,
+    "wordcounter.readtime": false,
+    "wordcounter.count_lines": false
 }

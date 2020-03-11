@@ -131,11 +131,22 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
         sudo update-alternatives --install /usr/bin/gnome-text-editor gnome-text-editor /snap/bin/code 60
         ```
 
-    - set up correct spell check
+    - install extensions
 
-        - install the `Spell Right` extension (in addition to the default `Code Spell Checker`)
+        ```bash
+        code_exts=(
+            Asuka.insertnumbers
+            ban.spellright
+            James-Yu.latex-workshop
+            jsynowiec.vscode-insertdatestring
+            kirozen.wordcounter
+            mhutchie.git-graph
+            ms-python.python
+        )
+        for ext in $code_exts; code --install-extension $ext
+        ```
 
-        - give it the system `hunspell` dictionaries: `ln -s /usr/share/hunspell ~/.config/Code/Dictionaries`
+    - set up correct spell check by giving `spellright` the system `hunspell` dictionaries: `ln -s /usr/share/hunspell ~/.config/Code/Dictionaries`
 
 - Setup my own bins
 
