@@ -6,8 +6,10 @@
 [alias]
 	br = branch
 	ci = commit -m
+	cu = commit -am
 	co = checkout
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+	la = lg --all
 	st = status
 	pushall = !git remote | xargs -L1 git push --all
 [core]
