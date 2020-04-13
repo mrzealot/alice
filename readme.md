@@ -21,7 +21,7 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
         - `sudo visudo`
         - modify the corresponding line: `%sudo ALL=(ALL) NOPASSWD: ALL`
 
-    - install basic dependencies: `sudo apt install curl git nodejs npm vim htop maim bluez x11-xserver-utils xclip baobab`
+    - install basic dependencies: `sudo apt install curl git nodejs npm vim htop maim bluez x11-xserver-utils xclip baobab unrar`
 
     - upgrade node
 
@@ -69,7 +69,7 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
         sudo apt update
         ```
 
-    - `sudo apt install i3 i3lock feh compton rofi redshift playerctl tty-clock`
+    - `sudo apt install i3 i3lock feh compton rofi redshift playerctl tty-clock at`
 
     - a separate package to control backlight:
 
@@ -166,4 +166,4 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
 
 - Setup media/office stuff
 
-    - `sudo apt install transmission vlc kolourpaint gimp inkscape audacity libreoffice calibre filezilla`
+    - `sudo apt install transmission vlc kolourpaint gimp inkscape audacity libreoffice calibre filezilla librecad ffmpeg handbrake`
