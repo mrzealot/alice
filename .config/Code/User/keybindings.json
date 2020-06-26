@@ -182,5 +182,13 @@
     {
         "key": "ctrl+0",
         "command": "-workbench.action.focusSideBar"
+    },
+    {
+        "key": "ctrl+shift+alt+left",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl+shift+alt+right",
+        "command": "workbench.action.navigateRight"
     }
 ]

@@ -68,5 +68,9 @@
     "wordcounter.count_chars": false,
     "wordcounter.count_paragraphs": false,
     "wordcounter.readtime": false,
-    "wordcounter.count_lines": false
+    "wordcounter.count_lines": false,
+    "diffEditor.maxComputationTime": 0,
+    "wordcounter.side.left": [
+        "word"
+    ]
 }

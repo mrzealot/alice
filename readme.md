@@ -142,6 +142,7 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
             kirozen.wordcounter
             mhutchie.git-graph
             ms-python.python
+            earshinov.permute-lines
         )
         for ext in $code_exts; code --install-extension $ext
         ```
