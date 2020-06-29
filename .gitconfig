@@ -6,12 +6,13 @@
 [alias]
 	br = branch
 	ci = commit -m
-	cu = commit -am
+	ca = commit -am # Commit with auto Add
 	co = checkout
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
 	la = lg --all
 	st = status
-	pushall = !git remote | xargs -L1 git push --all
+	par = !git remote | xargs -L1 git push # Push to All Remotes
+	pear = !git remote | xargs -L1 git push --all # Push Everything to All Remotes
 [core]
 	editor = code --wait
 [diff]
