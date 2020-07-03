@@ -1,23 +1,62 @@
 [user]
-	email = mr@zealot.hu
-	name = Bán Dénes
+    email = mr@zealot.hu
+    name = Bán Dénes
 [http]
-	postBuffer = 1048576000
+    postBuffer = 1048576000
 [alias]
-	br = branch
-	ci = commit -m
-	ca = commit -am # Commit with auto Add
-	co = checkout
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
-	la = lg --all
-	st = status
-	par = !git remote | xargs -L1 git push # Push to All Remotes
-	pear = !git remote | xargs -L1 git push --all # Push Everything to All Remotes
+    aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g' # List available aliases
+    a = add
+    b = branch
+    bd = "!f() { git branch -d $1 && git remote | xargs -irem git push rem --delete $1; }; f"
+    ci = commit -m
+    ca = commit -am # Commit with auto Add
+    oops = commit -a --amend --no-edit # Fix fuckup
+    reword = commit --amend # Edit last commit message
+    uncommit = reset --soft HEAD~1 # Undo last commit but keep changed files in stage
+    co = checkout
+    d = diff
+    ds = diff --staged
+    f = fetch
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+    la = l --all
+    m = merge
+    ff = merge --ff-only
+    q = merge --squash
+    p = push
+    pf = p --force
+    pa = !git remote | xargs -L1 git push # Push to all remotes
+    paa = pa --all # Push everything to all remotes
+    r = reset
+    rh = r --hard
+    s = status
+    ss = stash
+    sa = stash apply
+    untrack = rm --cache -- # Remove file(s) from Git but not from disk
 [core]
-	editor = code --wait
+    editor = code --wait
+    whitespace = -trailing-space # Don't consider trailing space change as a cause for merge conflicts
 [diff]
     tool = default-difftool
+    mnemonicPrefix = true # Use better, descriptive initials (c, i, w) instead of a/b.
+    renames = true # Show renames/moves as such
 [difftool "default-difftool"]
     cmd = code --wait --diff $LOCAL $REMOTE
 [color]
-	status = always
+    status = always
+[pull]
+    rebase = merges
+[push]
+    followTags = true
+[tag]
+    sort = version:refname # Sort tags as version numbers whenever applicable, so 1.10.2 is AFTER 1.2.0.
+[versionsort]
+    suffix = -alpha
+    suffix = .alpha
+    suffix = -beta
+    suffix = .beta
+    suffix = -rc
+    suffix = .rc
+[url "https://github.com/"]
+    insteadOf = gh:
+[url "https://bitbucket.org/"]
+    insteadOf = bb:
