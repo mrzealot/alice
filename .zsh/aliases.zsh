@@ -1,4 +1,3 @@
-git config --global alias.pushall '!git remote | xargs -L1 git push --all'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias settings='XDG_CURRENT_DESKTOP=GNOME gnome-control-center &'
@@ -10,4 +9,8 @@ alias open=xdg-open
 
 function remind() {
     ( echo '$HOME/.config/i3/notify.sh reminder 4116399 clock "<span size=\"25000\">'${2:-PING}'</span>" critical' | at now + ${1:-5} minutes & ) > /dev/null 2>&1
+}
+
+function vpn() {
+    for uuid in `nmcli con | awk '/vpn/ {print $2}'`; do nmcli con ${1:-up} $uuid; done
 }

@@ -72,5 +72,6 @@
     "diffEditor.maxComputationTime": 0,
     "wordcounter.side.left": [
         "word"
-    ]
+    ],
+    "diffEditor.ignoreTrimWhitespace": true
 }
