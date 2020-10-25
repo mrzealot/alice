@@ -32,6 +32,9 @@ bar {
         status_command i3status
 }
 
+# Toggle tiling / floating
+bindsym $g+j floating toggle
+
 # Use Mouse+$a to drag floating windows to their wanted position
 floating_modifier $a
 
