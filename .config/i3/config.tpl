@@ -179,8 +179,11 @@ mode "audio" {
         # S for soundbar (Bluetooth)
         bindsym s exec --no-startup-id $audio_command -s, mode "default"
 
-        # B for earbuds (Bluetooth)
-        bindsym b exec --no-startup-id $audio_command -b, mode "default"
+        # H for headphones (Bluetooth)
+        bindsym h exec --no-startup-id $audio_command -h, mode "default"
+
+        # D for disconnecting the current Bluetooth connection
+        bindsym d exec --no-startup-id $audio_command -d, mode "default"
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"; exec --no-startup-id ~/.config/i3/mode.sh

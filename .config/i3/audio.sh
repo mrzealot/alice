@@ -12,7 +12,8 @@ message() {
   echo "        -i       internal speakers"
   echo "        -e       external hdmi"
   echo "        -s       bluetooth soundbar"
-  echo "        -b       bluetooth earbuds"
+  echo "        -h       bluetooth headphones"
+  echo "        -d       disconnect bluetooth"
   echo
   exit 1
 }
@@ -51,18 +52,23 @@ case $1 in
     profile=$bluetooth_profile
     # try to connect to it, just in case it's not connected already
     echo "connect $BT_SOUNDBAR" | bluetoothctl
-    sleep 2s
+    sleep 5s
     ;;
-  -b)
-    label="Earbuds"
+  -h)
+    label="Headphones"
     icon="bt_headphones"
     card_prefix=$bluetooth_card_prefix
-    card=$(echo $BT_EARBUDS | sed 's/:/_/g')
+    card=$(echo $BT_HEADPHONES | sed 's/:/_/g')
     sink_prefix=$bluetooth_sink_prefix
     profile="headset_head_unit"
     # try to connect to it, just in case it's not connected already
-    echo "connect $BT_EARBUDS" | bluetoothctl
-    sleep 2s
+    echo "connect $BT_HEADPHONES" | bluetoothctl
+    sleep 5s
+    ;;
+  -d)
+    echo "disconnect" | bluetoothctl
+    sleep 10s
+    exit
     ;;
   *)
     message
