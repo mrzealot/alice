@@ -12,6 +12,7 @@
     ca = commit -am # Commit with auto Add
     oops = commit -a --amend --no-edit # Fix fuckup
     reword = commit --amend # Edit last commit message
+    redeploy = !git diff --exit-code --quiet && git commit --allow-empty -m "Redeploy" && git push # Redeploy blog after theme changes
     uncommit = reset --soft HEAD~1 # Undo last commit but keep changed files in stage
     co = checkout
     d = diff
