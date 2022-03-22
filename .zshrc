@@ -105,3 +105,6 @@ done
 autoload -U colors && colors
 PS1="%{$fg_bold[green]%}%~ %{$fg_bold[white]%}>%{$reset_color%} "
 RPS1="%(?..%{$fg_bold[red]%}[%?]%{$reset_color%})"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

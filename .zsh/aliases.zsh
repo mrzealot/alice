@@ -6,6 +6,7 @@ alias btspeed='hcitool con | grep E6:6F:0C:E7:48:91 | awk '\''{print $5}'\'' | x
 alias pong='ping google.com'
 alias python=python3
 alias open=xdg-open
+alias beep='~/.config/i3/notify.sh consoleNotification 4116399 lightbulb "<span size=\"40000\">BEEP\!</span>" critical'
 
 function remind() {
     ( echo '$HOME/.config/i3/notify.sh reminder 4116399 clock "<span size=\"25000\">'${2:-PING}'</span>" critical' | at now + ${1:-5} minutes & ) > /dev/null 2>&1

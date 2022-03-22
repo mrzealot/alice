@@ -10,7 +10,6 @@
     "explorer.confirmDragAndDrop": false,
     "latex-workshop.view.pdf.viewer": "browser",
     "explorer.confirmDelete": false,
-    "window.zoomLevel": 1,
     "cSpell.checkLimit": 5000,
     "cSpell.maxNumberOfProblems": 1000,
     "cSpell.userWords": [
@@ -50,8 +49,6 @@
         "yml"
     ],
     "editor.fontFamily": "'Hack', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "window.menuBarVisibility": "toggle",
-    "workbench.statusBar.visible": true,
     "workbench.editor.showTabs": true,
     "spellright.configurationScope": "user",
     "spellright.language": [
@@ -59,9 +56,9 @@
         "hu_HU"
     ],
     "spellright.documentTypes": [
-        "markdown",
         "latex",
-        "plaintext"
+        "plaintext",
+        "markdown"
     ],
     "spellright.notificationClass": "information",
     "editor.minimap.enabled": true,
@@ -73,5 +70,17 @@
     "wordcounter.side.left": [
         "word"
     ],
-    "diffEditor.ignoreTrimWhitespace": true
+    "diffEditor.ignoreTrimWhitespace": true,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "extensions.ignoreRecommendations": true,
+    "window.menuBarVisibility": "toggle",
+    "latex-workshop.latex.autoBuild.run": "never",
+    "window.zoomLevel": 1
 }
