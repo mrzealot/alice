@@ -170,3 +170,4 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
     - `sudo apt install transmission vlc kolourpaint gimp inkscape audacity libreoffice calibre filezilla librecad ffmpeg handbrake youtube-dl`
 
     - setup `scdl` SoundCloud downloader by `pip3 install git+https://github.com/flyingrub/scdl`
+        - example command: `scdl -l https://soundcloud.com/mrzealot -f --path .music/soundcloud -c --onlymp3 --debug`

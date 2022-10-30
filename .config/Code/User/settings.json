@@ -82,5 +82,10 @@
     "extensions.ignoreRecommendations": true,
     "window.menuBarVisibility": "toggle",
     "latex-workshop.latex.autoBuild.run": "never",
+    "gitlens.plusFeatures.enabled": false,
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "workbench.editor.untitled.hint": "hidden",
     "window.zoomLevel": 1
 }
