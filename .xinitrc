@@ -17,7 +17,7 @@ $HOME/.config/i3/dpi.sh init
 
 # set the background
 if [ -f /usr/bin/feh ]; then
-    feh --bg-scale "$HOME/.wallpapers/primary.png" --bg-scale "$HOME/.wallpapers/secondary.png" &
+    feh --bg-scale "$HOME/.wallpapers/primary.png" &
 fi
 
 # pass it on to the default conf

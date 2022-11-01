@@ -5,8 +5,7 @@ set $a Mod1
 set $g Mod4
 
 # Outputs (filled in by .xinitrc)
-set $in INTERNAL_DISPLAY
-set $ex EXTERNAL_DISPLAY
+set $display XRANDR_DISPLAY
 
 # Font (required setting)
 font pango:monospace 8
@@ -90,16 +89,16 @@ bindsym $g+p split v
 
 
 # Attach workspaces to outputs
-workspace 1 output $ex 
-workspace 2 output $ex 
-workspace 3 output $ex 
-workspace 4 output $ex 
-workspace 5 output $ex 
-workspace 6 output $ex 
-workspace 7 output $ex 
-workspace 8 output $ex 
-workspace 9 output $in
-workspace 0 output $in
+workspace 1 output $display
+workspace 2 output $display
+workspace 3 output $display
+workspace 4 output $display
+workspace 5 output $display
+workspace 6 output $display
+workspace 7 output $display
+workspace 8 output $display
+workspace 9 output $display
+workspace 0 output $display
 
 # Switch to workspace
 bindsym $g+n workspace 1
@@ -143,10 +142,13 @@ bindsym $g+eacute exec $lock_command
 set $power_command ~/.config/i3/power.sh
 mode "power" {
         # D for display reconfig
-        bindsym d exec --no-startup-id ~/.config/i3/display.sh reset, mode "default"
+        bindsym d exec --no-startup-id ~/.config/i3/display.sh reset && ~/.config/i3/dpi.sh reset, mode "default"
 
         # N for notification restart (as it sometimes just decides to die)
         bindsym n exec --no-startup-id killall dunst && dunst -config ~/.dunstrc, mode "default"
+
+        # C for compton restart (as it sometimes just decides to die, too)
+        bindsym n exec --no-startup-id killall compton && compton -b, mode "default"
 
         # R for reboot
         bindsym r exec --no-startup-id $power_command -r, mode "default"
@@ -272,8 +274,8 @@ bindsym $g+space exec urxvt
 
 # Control Center
 assign [instance="alice_cc_udd"] 9
-bindsym $g+z exec --no-startup-id ~/.config/i3/cc.sh
-exec --no-startup-id ~/.config/i3/cc.sh
+bindsym $g+z exec brave-browser --user-data-dir=$HOME/.alice_cc_udd
+exec brave-browser --user-data-dir=$HOME/.alice_cc_udd
 
 # Clock
 assign [instance="myclock"] 0
