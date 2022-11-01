@@ -80,6 +80,19 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
 
     - set i3 as the default WM: `sudo update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/bin/i3 60`
 
+    - rename user folders:
+
+        ```bash
+        mv Asztal .desktop
+        mv Letöltések .downloads
+        mv Sablonok .templates
+        mv Nyilvános .public
+        mv Dokumentumok .documents
+        mv Zenék .music
+        mv Képek .pictures
+        mv Videók .videos
+        ```
+
 - Setup terminal and shell
 
     - `sudo apt install zsh rxvt-unicode`
