@@ -151,6 +151,9 @@ mode "power" {
         # R for reboot
         bindsym r exec --no-startup-id $power_command -r, mode "default"
 
+        # W for rebooting into Windows
+        bindsym w exec --no-startup-id $power_command -w, mode "default"
+
         # X for restarting X
         # (which automatically happens when exiting i3 because of the auto login conf)
         bindsym x exec --no-startup-id $power_command -x, mode "default"

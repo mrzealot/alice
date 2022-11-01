@@ -10,6 +10,7 @@ message() {
   echo "  options:"
   echo "        -x       logout / kill X"
   echo "        -r       reboot system"
+  echo "        -w       reboot into Windows"
   echo "        -s       shutdown system"
   echo
   exit 1
@@ -18,6 +19,7 @@ message() {
 case $1 in
   -x) label="Logging out";   action="sudo i3-msg exit" ;;
   -r) label="Rebooting";     action="sudo /sbin/shutdown -r now" ;;
+  -w) label="Windows";       action="sudo /sbin/grub-reboot 1 && sudo /sbin/shutdown -r now" ;;
   -s) label="Shutting down"; action="sudo /sbin/shutdown -h now" ;;
   *)  message ;;
 esac
@@ -31,6 +33,6 @@ i3-msg '[class=".*"] kill'
 sleep 2s
 
 # do it
-$action &
+eval $action &
 
 exit 0
