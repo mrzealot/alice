@@ -69,13 +69,12 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
         sudo apt update
         ```
 
-    - `sudo apt install i3 i3lock feh compton rofi redshift playerctl tty-clock at`
+    - `sudo apt install i3 i3lock feh compton rofi redshift playerctl tty-clock at xbacklight`
 
-    - a separate package to control backlight:
+    - adjust X11 to be able to control backlight:
 
         ```bash
-        curl https://github.com/haikarainen/light/releases/download/v1.2/light_1.2_amd64.deb --output /tmp/light.deb
-        sudo dpkg -i /tmp/light.deb
+        sudo cp .config/i3/xorg.conf.tpl /etc/X11/xorg.conf
         ```
 
     - disable graphical login manager: `sudo systemctl set-default multi-user.target` 

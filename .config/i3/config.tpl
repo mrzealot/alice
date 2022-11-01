@@ -211,10 +211,10 @@ bindsym XF86AudioPrev exec --no-startup-id $media_command previous
 
 # Screen brightness controls
 set $brightness_command ~/.config/i3/brightness.sh
-bindsym XF86MonBrightnessUp exec $brightness_command -A 5
-bindsym $s+XF86MonBrightnessUp exec $brightness_command -A 1
-bindsym XF86MonBrightnessDown exec $brightness_command -U 5
-bindsym $s+XF86MonBrightnessDown exec $brightness_command -U 1
+bindsym XF86MonBrightnessUp exec $brightness_command -inc 5
+bindsym $s+XF86MonBrightnessUp exec $brightness_command -inc 1
+bindsym XF86MonBrightnessDown exec $brightness_command -dec 5
+bindsym $s+XF86MonBrightnessDown exec $brightness_command -dec 1
 
 # Disabling built-in keyboard/touchpad
 bindsym $g+d exec ~/.config/i3/keyboard.sh
