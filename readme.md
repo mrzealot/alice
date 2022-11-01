@@ -60,15 +60,6 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
 
 - Setup WM-related stuff:
 
-    - dedicated i3 repo for fresher versions
-
-        ```bash
-        curl https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2019.02.01_all.deb --output /tmp/keyring.deb
-        sudo dpkg -i /tmp/keyring.deb
-        echo "deb https://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" | sudo tee -a /etc/apt/sources.list.d/sur5r-i3.list
-        sudo apt update
-        ```
-
     - `sudo apt install i3 i3lock feh compton rofi redshift playerctl tty-clock at xbacklight`
 
     - adjust X11 to be able to control backlight:
@@ -89,20 +80,6 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
 
     - set i3 as the default WM: `sudo update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/bin/i3 60`
 
-    - install `dunst` for custom notifications
-
-        ```bash
-        sudo apt install libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libnotify-dev
-        mkdir -p .builds/dunst
-        git clone https://github.com/dunst-project/dunst.git .builds/dunst
-        cd .builds/dunst
-        make
-        sudo make install
-        make dunstify
-        sudo install -Dm755 dunstify /usr/local/bin/dunstify
-        cd
-        ```
-
 - Setup terminal and shell
 
     - `sudo apt install zsh rxvt-unicode`
@@ -117,20 +94,20 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
 
 - Setup browser
 
-    - install according to [this doc](https://brave-browser.readthedocs.io/en/latest/installing-brave.html)
+    - install according to [this doc](https://brave.com/linux/)
 
 - Setup editor
 
     - `sudo snap install --classic code`
 
-    - set as the default editor:
+    - set as the default editor through the alternatives system, too (xdg mime type associations are handled already through `.config/mimeapps.list`):
 
         ```bash
         sudo update-alternatives --install /usr/bin/editor editor /snap/bin/code 60
         sudo update-alternatives --install /usr/bin/gnome-text-editor gnome-text-editor /snap/bin/code 60
         ```
 
-    - install extensions
+    - install extensions (needs `zsh`)
 
         ```bash
         code_exts=(
