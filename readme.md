@@ -84,7 +84,7 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
 
         ```bash
         sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
-        sudo cp .config/i3/autologin.conf /etc/systemd/system/getty@tty1.service.d/override.conf
+        sudo cp .config/i3/autologin.conf /etc/systemd/system/getty@tty1.service.d/autologin.conf
         ```
 
     - set i3 as the default WM: `sudo update-alternatives --install /usr/bin/x-session-manager x-session-manager /usr/bin/i3 60`
