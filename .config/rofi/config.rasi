@@ -4,7 +4,7 @@
 configuration {
     modi: "combi";
     combi-modi: "drun,window,run";
-    font: "hack 30";
+    font: "hack 18";
     show-icons: true;
     display-combi: ">";
 }
@@ -23,14 +23,14 @@ configuration {
 #window {
     location: center;
     anchor: center;
-    transparency: "screenshot";
-    padding: 10px;
+    transparency: "real";
+    fullscreen: true;
+    padding: 290px 500px;
     border: 0px;
-    border-radius: 5px;
     color: @white;
-    background-color: @transparent;
+    background-color: transparent;
     spacing: 0;
-    children:  [vertb, mainbox];
+    children:  [mainbox];
     orientation: horizontal;
 }
 
@@ -49,6 +49,7 @@ configuration {
 }
 
 #inputbar {
+    children: [ prompt, entry, case-indicator ];
     color: @white;
     padding: 20px;
     background-color: @tblack;
@@ -58,8 +59,12 @@ configuration {
 }
 
 #entry,prompt,case-indicator {
-    text-font: inherit;
+    font: "Hack 26";
     text-color:inherit;
+}
+
+#entry {
+    placeholder: "";
 }
 
 #prompt {
@@ -82,48 +87,21 @@ configuration {
     border-radius: 5px;
     background-color: transparent;
     color: @white;
-    font: "Hack 18";
 }
 
-#element selected.normal {
-    background-color: @darkgrey;
+#element normal.normal {
+    background-color: transparent;
+    color: @lightgrey;
 }
-
-#element normal active {
-    foreground: @darkgrey;
-}
-
-#element normal urgent {
-    foreground: @red;
-}
-
 #element alternate normal {
+    background-color: transparent;
+    color: @lightgrey;
+}
+#element selected.normal {
+    background-color: @lightgrey;
+    color: @tblack;
 }
 
-#element alternate active {
-    foreground: @darkgrey;
+#scrollbar {
+    handle-color: black;
 }
-
-#element alternate urgent {
-    foreground: @red;
-}
-
-#element selected active {
-    background-color: @darkgrey;
-    foreground: @black;
-}
-
-#element selected urgent {
-    background-color: @red;
-    foreground: @black;
-}
-
-#element normal normal {
-
-}
-
-#vertb {
-    expand: false;
-    children: [ dummy0, sidebar, dummy1  ];
-}
-
