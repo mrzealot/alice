@@ -7,21 +7,42 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
 - Is it really called Alice because of my infatuation with the children's tale? Yes.
 - Is it accurate and fitting, though? Also yes.
 
-## System Prep
+## Setup
+
+- Back up previous system
+
+    - don't forget to bring over ssh keys and vpn configs from the old install, if applicable
 
 - Install a fresh Ubuntu in "Minimal" mode
 
-    - allocate the following partitions:
+    - allocate the following partitions, if it's gonna be a standalone OS:
         - `boot` (~1GB)
         - `swap` (~size of RAM)
         - `root` (~50GB)
         - `home` (rest)
 
+    - otherwise, install Windows first
+        - after disabling secure BOOT at the BIOS level
+        - also, don't forget to disable hibernation so that it can't mess with dual boot: `powercfg -h off` in an admin PowerShell
+        - then shrink about 60-80GB for Ubuntu, and install there, automatically "next to" Windows
+
     - allow the sudo group to `sudo` without a password
         - `sudo visudo`
         - modify the corresponding line: `%sudo ALL=(ALL) NOPASSWD: ALL`
 
+    - customize grub, if applicable
+        - `sudo apt install grub-customizer`
+        - make sure that the default entry is the "previously booted entry" so we can change it temporarily 
+	    - also, to not depend on exact names, make sure that Ubuntu is first in the list and Windows is second
+
     - install basic dependencies: `sudo apt install curl git nodejs npm vim htop maim bluez x11-xserver-utils xclip baobab unrar`
+
+    - check ssh keys and permissions, as the ssh agent will refuse keys that are "too accessible"
+
+        ```
+        chmod 700 ~/.ssh
+        chmod 600 ~/.ssh/*
+        ```
 
     - upgrade node
 
@@ -160,3 +181,18 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
 
     - setup `scdl` SoundCloud downloader by `pip3 install git+https://github.com/flyingrub/scdl`
         - example command: `scdl -l https://soundcloud.com/mrzealot -f --path .music/soundcloud -c --onlymp3 --debug`
+
+
+
+## TODO
+
+- add support for the other XF86 keys
+	- XF86Display (F7)
+	- XF86WLAN (F8)
+	- XF86Tools (F9)
+	- XF86Bluetooth (F10)
+	- [F11 is not standard](https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_6)#Special_buttons)
+	- XF86Favorites (F12)
+
+- robust-ize notification DPI timeout
+	- add a temp file (with a timestamp, e.g.) and check that no other notification is running before resetting the DPI
