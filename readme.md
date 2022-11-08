@@ -126,6 +126,11 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
         git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
         ```
 
+    - setup conda for python env support
+
+        - install according to [this doc](https://docs.conda.io/en/latest/miniconda.html)
+        - activation/hooking script is already in the zsh config
+
 - Setup browser
 
     - install according to [this doc](https://brave.com/linux/)
