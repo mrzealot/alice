@@ -182,6 +182,11 @@ It stands for **A**dvanced **L**inux **I**nterface for **C**ontrol & **E**fficie
     - setup `scdl` SoundCloud downloader by `pip3 install git+https://github.com/flyingrub/scdl`
         - example command: `scdl -l https://soundcloud.com/mrzealot -f --path .music/soundcloud -c --onlymp3 --debug`
 
+- Setup jekyll for blogging
+
+    - install according to [this doc](https://jekyllrb.com/docs/installation/ubuntu/)
+    - environment vars are already in the zsh config
+
 
 
 ## TODO
