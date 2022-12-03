@@ -27,6 +27,7 @@
     pf = p --force
     pa = !git remote | xargs -L1 git push # Push to all remotes
     paa = pa --all # Push everything to all remotes
+    pr = "!f() { git fetch origin pull/${1}/head:pr${1} && git checkout pr${1}; }; f" # Fetch pull request
     r = reset
     rh = r --hard
     s = status
