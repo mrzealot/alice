@@ -5,6 +5,7 @@ alias alice='/usr/bin/git --git-dir=$HOME/.alice/ --work-tree=$HOME'
 alias btspeed='hcitool con | grep E6:6F:0C:E7:48:91 | awk '\''{print $5}'\'' | xargs -I{} sudo hcitool lecup --handle {} --min 6 --max 7 --latency 0'
 alias pong='ping google.com'
 alias python=python3
+alias serve='python -m http.server 8000'
 alias open=xdg-open
 alias beep='~/.config/i3/notify.sh consoleNotification 4116399 lightbulb "<span size=\"40000\">BEEP\!</span>" critical'
 

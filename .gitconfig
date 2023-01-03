@@ -10,7 +10,7 @@
     bd = "!f() { git branch -d $1 && git remote | xargs -irem git push rem --delete $1; }; f"
     ci = commit -m
     ca = commit -am # Commit with auto Add
-    oops = commit -a --amend --no-edit # Fix fuckup
+    oops = commit --amend --no-edit # Fix fuckup
     reword = commit --amend # Edit last commit message
     redeploy = !git diff --exit-code --quiet && git commit --allow-empty -m "Redeploy" && git push # Redeploy blog after theme changes
     uncommit = reset --soft HEAD~1 # Undo last commit but keep changed files in stage

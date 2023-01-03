@@ -268,3 +268,8 @@ x-scheme-handler/http=brave-browser.desktop
 x-scheme-handler/https=brave-browser.desktop
 x-scheme-handler/mailto=thunderbird.desktop
 x-scheme-handler/snap=snap-store_ubuntu-software.desktop
+
+[Added Associations]
+application/x-kicad-pcb=org.kicad.pcbnew.desktop;code_code.desktop;
+application/zip=org.gnome.FileRoller.desktop;
+image/jpeg=org.kde.kolourpaint.desktop;
